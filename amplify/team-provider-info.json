@@ -10,6 +10,14 @@
       "StackName": "amplify-dynamodbcqrs-dev-174303",
       "StackId": "arn:aws:cloudformation:eu-west-1:213432432513:stack/amplify-dynamodbcqrs-dev-174303/3a2d1010-4d69-11ed-bb8e-06a1820e84d9",
       "AmplifyAppId": "d3gx9ll5i2lk0b"
+    },
+    "categories": {
+      "function": {
+        "restapiFn": {}
+      },
+      "auth": {
+        "dynamodbcqrs": {}
+      }
     }
   }
 }
