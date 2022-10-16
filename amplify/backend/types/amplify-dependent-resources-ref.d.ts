@@ -25,17 +25,6 @@ export type AmplifyDependentResourcesAttributes = {
             "Region": "string"
         }
     },
-    "auth": {
-        "dynamodbcqrs": {
-            "IdentityPoolId": "string",
-            "IdentityPoolName": "string",
-            "UserPoolId": "string",
-            "UserPoolArn": "string",
-            "UserPoolName": "string",
-            "AppClientIDWeb": "string",
-            "AppClientID": "string"
-        }
-    },
     "api": {
         "restapi": {
             "RootUrl": "string",

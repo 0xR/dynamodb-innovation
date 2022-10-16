@@ -9,12 +9,25 @@
       "UnauthRoleName": "amplify-dynamodbcqrs-dev-174303-unauthRole",
       "StackName": "amplify-dynamodbcqrs-dev-174303",
       "StackId": "arn:aws:cloudformation:eu-west-1:213432432513:stack/amplify-dynamodbcqrs-dev-174303/3a2d1010-4d69-11ed-bb8e-06a1820e84d9",
-      "AmplifyAppId": "d3gx9ll5i2lk0b"
+      "AmplifyAppId": "d3gx9ll5i2lk0b",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-dynamodbcqrs-dev-174303-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "function": {
-        "restapiFn": {},
-        "singletableTrigger8834b5b9": {}
+        "restapiFn": {
+          "deploymentBucketName": "amplify-dynamodbcqrs-dev-174303-deployment",
+          "s3Key": "amplify-builds/restapiFn-61584b3668566f614239-build.zip"
+        },
+        "singletableTrigger8834b5b9": {
+          "deploymentBucketName": "amplify-dynamodbcqrs-dev-174303-deployment",
+          "s3Key": "amplify-builds/singletableTrigger8834b5b9-566335776e7158347472-build.zip"
+        }
+      },
+      "storage": {
+        "singletable": {}
+      },
+      "api": {
+        "restapi": {}
       }
     }
   }
