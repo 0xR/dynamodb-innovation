@@ -1,0 +1,16 @@
+{
+  "resourceName": "singletable",
+  "tableName": "singletable",
+  "partitionKey": {
+    "fieldName": "pk1",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "sk1",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "singletableTrigger8834b5b9"
+  ]
+}
