@@ -13,10 +13,8 @@
     },
     "categories": {
       "function": {
-        "restapiFn": {}
-      },
-      "auth": {
-        "dynamodbcqrs": {}
+        "restapiFn": {},
+        "singletableTrigger8834b5b9": {}
       }
     }
   }
