@@ -1,4 +1,10 @@
-exports.handler = function (event, context) {
+/* Amplify Params - DO NOT EDIT
+	ENV
+	REGION
+	STORAGE_SINGLETABLE_ARN
+	STORAGE_SINGLETABLE_NAME
+	STORAGE_SINGLETABLE_STREAMARN
+Amplify Params - DO NOT EDIT */exports.handler = function (event, context) {
   console.log(JSON.stringify(event, null, 2));
   event.Records.forEach(record => {
     console.log(record.eventID);

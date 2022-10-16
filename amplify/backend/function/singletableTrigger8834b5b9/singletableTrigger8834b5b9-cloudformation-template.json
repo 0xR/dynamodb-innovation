@@ -15,7 +15,7 @@
     },
     "storagesingletableStreamArn": {
       "Type": "String",
-      "Default": "storagesingletableArn"
+      "Default": "storagesingletableStreamArn"
     },
     "deploymentBucketName": {
       "Type": "String"
@@ -65,6 +65,18 @@
           "Variables": {
             "ENV": {
               "Ref": "env"
+            },
+            "REGION": {
+              "Ref": "AWS::Region"
+            },
+            "STORAGE_SINGLETABLE_NAME": {
+              "Ref": "storagesingletableName"
+            },
+            "STORAGE_SINGLETABLE_ARN": {
+              "Ref": "storagesingletableArn"
+            },
+            "STORAGE_SINGLETABLE_STREAMARN": {
+              "Ref": "storagesingletableStreamArn"
             }
           }
         },
@@ -219,6 +231,58 @@
           ]
         },
         "StartingPosition": "LATEST"
+      }
+    },
+    "AmplifyResourcesPolicy": {
+      "DependsOn": [
+        "LambdaExecutionRole"
+      ],
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyName": "amplify-lambda-execution-policy",
+        "Roles": [
+          {
+            "Ref": "LambdaExecutionRole"
+          }
+        ],
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "dynamodb:Put*",
+                "dynamodb:Create*",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:Get*",
+                "dynamodb:BatchGetItem",
+                "dynamodb:List*",
+                "dynamodb:Describe*",
+                "dynamodb:Scan",
+                "dynamodb:Query",
+                "dynamodb:Update*",
+                "dynamodb:RestoreTable*",
+                "dynamodb:Delete*"
+              ],
+              "Resource": [
+                {
+                  "Ref": "storagesingletableArn"
+                },
+                {
+                  "Fn::Join": [
+                    "/",
+                    [
+                      {
+                        "Ref": "storagesingletableArn"
+                      },
+                      "index/*"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   },
