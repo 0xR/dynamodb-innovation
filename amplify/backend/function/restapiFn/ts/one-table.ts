@@ -10,7 +10,8 @@ const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 
 export const table = new Table({
   client: client,
-  name: 'MyTable',
+  name: process.env.STORAGE_SINGLETABLE_NAME,
+  partial: false,
   schema: {
     format: 'onetable:1.1.0',
     version: '0.0.1',
@@ -21,16 +22,16 @@ export const table = new Table({
     },
     models: {
       Account: {
-        pk: { type: String, value: 'account:${id}' },
-        sk: { type: String, value: 'account:' },
+        pk1: { type: String, value: 'account:${id}' },
+        sk1: { type: String, value: 'account:' },
         id: { type: String, generate: 'ulid', validate: /^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]{26}$/i },
         name: { type: String, required: true },
-        status: { type: String, default: 'active' },
-        zip: { type: String },
+        status: { type: String, default: 'active', required: true },
+        zip: { type: String, required: true },
       },
       User: {
-        pk: { type: String, value: 'account:${accountName}' },
-        sk: { type: String, value: 'user:${email}', validate: emailRegex },
+        pk1: { type: String, value: 'account:${accountName}' },
+        sk1: { type: String, value: 'user:${email}', validate: emailRegex },
         id: { type: String, required: true },
         accountName: { type: String, required: true },
         email: { type: String, required: true },
@@ -50,3 +51,7 @@ export const table = new Table({
     },
   },
 })
+
+
+export const AccountModel = table.getModel('Account')
+export const UserModel = table.getModel('User')

@@ -9,9 +9,11 @@
     "aws-serverless-express": "^3.3.5",
     "body-parser": "^1.17.1",
     "dynamodb-onetable": "^2.5.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "ulid": "^2.3.0"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.92"
+    "@types/aws-lambda": "^8.10.92",
+    "dotenv": "^16.0.3"
   }
 }
