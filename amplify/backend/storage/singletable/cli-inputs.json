@@ -9,7 +9,19 @@
     "fieldName": "sk1",
     "fieldType": "string"
   },
-  "gsi": [],
+  "gsi": [
+    {
+      "name": "gs1",
+      "partitionKey": {
+        "fieldName": "gs1pk",
+        "fieldType": "string"
+      },
+      "sortKey": {
+        "fieldName": "gs1sk",
+        "fieldType": "string"
+      }
+    }
+  ],
   "triggerFunctions": [
     "singletableTrigger8834b5b9"
   ]
