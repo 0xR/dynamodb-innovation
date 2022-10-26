@@ -16,11 +16,11 @@
       "function": {
         "restapiFn": {
           "deploymentBucketName": "amplify-dynamodbcqrs-dev-174303-deployment",
-          "s3Key": "amplify-builds/restapiFn-61584b3668566f614239-build.zip"
+          "s3Key": "amplify-builds/restapiFn-6179566b724967315475-build.zip"
         },
         "singletableTrigger8834b5b9": {
           "deploymentBucketName": "amplify-dynamodbcqrs-dev-174303-deployment",
-          "s3Key": "amplify-builds/singletableTrigger8834b5b9-566335776e7158347472-build.zip"
+          "s3Key": "amplify-builds/singletableTrigger8834b5b9-59424867715356354b6c-build.zip"
         }
       },
       "storage": {
