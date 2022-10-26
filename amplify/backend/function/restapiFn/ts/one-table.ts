@@ -24,17 +24,18 @@ export const table = new Table({
       Account: {
         pk1: { type: String, value: 'account:${id}' },
         sk1: { type: String, value: 'account:' },
-        id: { type: String, generate: 'ulid', validate: /^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]{26}$/i },
+        id: { type: String, required: true, generate: 'ulid', validate: /^[0123456789ABCDEFGHJKMNPQRSTVWXYZ]{26}$/i },
         name: { type: String, required: true },
         status: { type: String, default: 'active', required: true },
         zip: { type: String, required: true },
       },
+
       User: {
-        pk1: { type: String, value: 'account:${accountName}' },
-        sk1: { type: String, value: 'user:${email}', validate: emailRegex },
+        pk1: { type: String, value: 'account:${accountId}' },
+        sk1: { type: String, value: 'user:${email}'},
         id: { type: String, required: true },
-        accountName: { type: String, required: true },
-        email: { type: String, required: true },
+        accountId: { type: String, required: true },
+        email: { type: String, required: true, validate: emailRegex  },
         firstName: { type: String, required: true },
         lastName: { type: String, required: true },
         username: { type: String, required: true },
